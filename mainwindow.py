@@ -31,8 +31,8 @@ class MainWindow(QMainWindow):
             y1 = punto1[1]
             x2 = punto2[0]
             y2 = punto2[1]
-            self.scene.addEllipse(x1, y1, 6, 6)
-            self.scene.addEllipse(x2, y2, 6, 6)
+            # self.scene.addEllipse(x1, y1, 6, 6)
+            # self.scene.addEllipse(x2, y2, 6, 6)
             self.scene.addLine(x1+3, y1+3, x2+3, y2+3)
 
     @Slot()
