@@ -17,11 +17,17 @@ class MainWindow(QMainWindow):
         self.ui.actionMostrar.triggered.connect(self.mostrar_puntos)
         self.ui.actionMas_Cercanos.triggered.connect(self.puntos_mas_cercanos)
         self.ui.horizontalSlider.valueChanged.connect(self.get_slider)
+        self.ui.spinBox_puntos.valueChanged[int].connect(self.get_spinbox)
 
         self.scene = QGraphicsScene()
         self.ui.graphicsView.setScene(self.scene)
 
         self.puntos = []
+
+    @Slot(int)
+    def get_spinbox(self, x):
+        # print(x)
+        self.ui.horizontalSlider.setValue(x)
 
     @Slot(int)
     def get_slider(self, x):
