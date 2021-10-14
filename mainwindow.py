@@ -3,6 +3,7 @@ from ui_mainwindow import Ui_MainWindow
 from PySide2.QtGui import QPen, QColor, QTransform
 from PySide2.QtCore import Slot
 from random import randint
+from algoritmos import get_puntos
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -12,9 +13,15 @@ class MainWindow(QMainWindow):
 
         self.ui.dibujar.clicked.connect(self.dibujar)
         self.ui.limpiar.clicked.connect(self.limpiar)
+        self.ui.actionMostrar.triggered.connect(self.mostrar_puntos)
 
         self.scene = QGraphicsScene()
         self.ui.graphicsView.setScene(self.scene)
+
+    @Slot()
+    def mostrar_puntos(self):
+        puntos = get_puntos(100)
+        print(puntos)
 
     def wheelEvent(self, event):
         print(event.delta())

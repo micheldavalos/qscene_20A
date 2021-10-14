@@ -43,8 +43,26 @@
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuPuntos">
+    <property name="title">
+     <string>Puntos</string>
+    </property>
+    <addaction name="actionMostrar"/>
+    <addaction name="actionMas_Cercanos"/>
+   </widget>
+   <addaction name="menuPuntos"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionMostrar">
+   <property name="text">
+    <string>Mostrar</string>
+   </property>
+  </action>
+  <action name="actionMas_Cercanos">
+   <property name="text">
+    <string>Mas Cercanos</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
