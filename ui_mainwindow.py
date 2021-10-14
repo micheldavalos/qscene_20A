@@ -26,20 +26,56 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout = QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName(u"gridLayout")
-        self.graphicsView = QGraphicsView(self.centralwidget)
+        self.groupBox = QGroupBox(self.centralwidget)
+        self.groupBox.setObjectName(u"groupBox")
+        self.gridLayout_2 = QGridLayout(self.groupBox)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.graphicsView = QGraphicsView(self.groupBox)
         self.graphicsView.setObjectName(u"graphicsView")
 
-        self.gridLayout.addWidget(self.graphicsView, 0, 0, 1, 2)
+        self.gridLayout_2.addWidget(self.graphicsView, 0, 0, 1, 4)
 
-        self.dibujar = QPushButton(self.centralwidget)
-        self.dibujar.setObjectName(u"dibujar")
-
-        self.gridLayout.addWidget(self.dibujar, 1, 0, 1, 1)
-
-        self.limpiar = QPushButton(self.centralwidget)
+        self.limpiar = QPushButton(self.groupBox)
         self.limpiar.setObjectName(u"limpiar")
 
-        self.gridLayout.addWidget(self.limpiar, 1, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.limpiar, 1, 2, 1, 2)
+
+        self.dibujar = QPushButton(self.groupBox)
+        self.dibujar.setObjectName(u"dibujar")
+
+        self.gridLayout_2.addWidget(self.dibujar, 1, 0, 1, 2)
+
+
+        self.gridLayout.addWidget(self.groupBox, 0, 0, 1, 2)
+
+        self.groupBox_2 = QGroupBox(self.centralwidget)
+        self.groupBox_2.setObjectName(u"groupBox_2")
+        self.horizontalLayout_2 = QHBoxLayout(self.groupBox_2)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.label = QLabel(self.groupBox_2)
+        self.label.setObjectName(u"label")
+        self.label.setLayoutDirection(Qt.LeftToRight)
+        self.label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.horizontalLayout_2.addWidget(self.label)
+
+        self.spinBox_puntos = QSpinBox(self.groupBox_2)
+        self.spinBox_puntos.setObjectName(u"spinBox_puntos")
+        self.spinBox_puntos.setMinimum(2)
+        self.spinBox_puntos.setMaximum(10000)
+
+        self.horizontalLayout_2.addWidget(self.spinBox_puntos)
+
+        self.horizontalSlider = QSlider(self.groupBox_2)
+        self.horizontalSlider.setObjectName(u"horizontalSlider")
+        self.horizontalSlider.setMinimum(2)
+        self.horizontalSlider.setMaximum(10000)
+        self.horizontalSlider.setOrientation(Qt.Horizontal)
+
+        self.horizontalLayout_2.addWidget(self.horizontalSlider)
+
+
+        self.gridLayout.addWidget(self.groupBox_2, 1, 0, 1, 1)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
@@ -65,8 +101,11 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.actionMostrar.setText(QCoreApplication.translate("MainWindow", u"Mostrar", None))
         self.actionMas_Cercanos.setText(QCoreApplication.translate("MainWindow", u"Mas Cercanos", None))
-        self.dibujar.setText(QCoreApplication.translate("MainWindow", u"Dibujar", None))
+        self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"QScene", None))
         self.limpiar.setText(QCoreApplication.translate("MainWindow", u"Limpiar", None))
+        self.dibujar.setText(QCoreApplication.translate("MainWindow", u"Dibujar", None))
+        self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Puntos", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Puntos a generar:", None))
         self.menuPuntos.setTitle(QCoreApplication.translate("MainWindow", u"Puntos", None))
     # retranslateUi
 
