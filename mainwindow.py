@@ -49,7 +49,7 @@ class MainWindow(QMainWindow):
 
     @Slot()
     def mostrar_puntos(self):
-        self.puntos = get_puntos(10)
+        self.puntos = get_puntos(self.ui.spinBox_puntos.value())
         pprint(self.puntos)
         for punto in self.puntos:
             x = punto[0]
